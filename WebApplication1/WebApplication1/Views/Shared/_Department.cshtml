@@ -1,0 +1,21 @@
+﻿@model WebApplication1.Models.DepartmentModel
+
+<div style="padding-left:50px"
+
+    <p>@Model.Name @Model.Address @Model.Phone</p>
+    
+    @foreach (WebApplication1.Models.InfoModel info in Model.DepartmentsWithEmployees)
+    {
+        if (info is WebApplication1.Models.DepartmentModel)
+        {
+            <p></p>
+            @Html.Partial("_Department", info);
+        }
+        else
+        {
+            @Html.Partial("_Employee", info);
+        }
+        
+    }
+
+</div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -10,7 +11,8 @@ namespace WebApplication1.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            DepartmentModel model = DepartmentModel.TmpData(); 
+            return View(model);
         }
 
         public ActionResult About()
