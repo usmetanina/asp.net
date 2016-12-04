@@ -1,7 +1,37 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿@model WebApplication1.Models.UserModel
 
-<p>Use this area to provide additional information.</p>
+@{if (User.Identity.IsAuthenticated)
+    {
+        <div id="resultAfterUpdate">Это всё ещё вы! Ваш логин: @User.Identity.Name</div>
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<form action="/Home/About" method="post">
+    <label for="login">Логин</label>
+    <input id="Login" name="Login" type="text" />
+    <label for="password">Пароль</label>
+    <input id="Password" name="Password" type="text" />
+    <input type="submit" value="Войти" />
+
+</form>
+<a href="/Home/About">Обновить страницу</a>
+}
+
+@{if (Model != null)
+    {
+        if (Model.Login != null)
+        {
+        <div id="resultBeforeUpdate">Вы вошли под ником @Model.Login</div>
+        }
+        else
+        {
+            <div id="resultBeforeUpdate">Попробуйте ещё раз</div>
+        }
+    }
+}
+
+
