@@ -58,11 +58,11 @@ namespace openid
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "841458658214-r89iehv9pk7lc8mnu5b9ftf7gid9hhpv.apps.googleusercontent.com",
+                ClientSecret = "CjFLAKn5WMSXuCbDqiBbZUye"
+            });
         }
     }
 }
