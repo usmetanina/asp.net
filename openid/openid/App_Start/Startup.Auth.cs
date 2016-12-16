@@ -63,6 +63,7 @@ namespace openid
                 ClientId = "841458658214-r89iehv9pk7lc8mnu5b9ftf7gid9hhpv.apps.googleusercontent.com",
                 ClientSecret = "CjFLAKn5WMSXuCbDqiBbZUye"
             });
+            //app.Use(typeof(VkClientModel), app, "5780500", "FkANh5d3BxS3CccHKaHp", "email");
         }
     }
 }
